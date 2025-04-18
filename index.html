@@ -4,15 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basit Raza Abbasi | Software Developer, Data Analyst, Digital Marketer</title>
-  <meta name="description" content="Professional portfolio of Basit Raza Abbasi — specializing in software development, data analytics, web development, and digital marketing.">
-  <meta name="keywords" content="Basit Raza Abbasi, Portfolio, Software Developer, Data Analyst, Web Developer, Digital Marketer">
+  <meta name="description" content="Official Portfolio of Basit Raza Abbasi — Software Developer, Data Analyst, Digital Marketer based in Canada.">
+  <meta name="keywords" content="Basit Abbasi, Software Developer, Data Analyst, Web Developer, Digital Marketer, Portfolio">
   <meta name="author" content="Basit Raza Abbasi">
+  <meta property="og:title" content="Basit Raza Abbasi Portfolio">
+  <meta property="og:description" content="Explore my professional journey in software development, data analytics, web development, and digital marketing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-vercel-link.com">
+  <meta property="og:image" content="your-photo.jpg">
+
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
 
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="btn dark-toggle">🌓 Toggle Dark Mode</button>
+
 <!-- Hero Section -->
 <header class="hero">
+  <canvas id="particles-js"></canvas>
   <img src="your-photo.jpg" alt="Basit Raza Abbasi" class="profile-img">
   <h1>Hi, I'm Basit Raza Abbasi</h1>
   <p class="typing" id="typing"></p>
@@ -23,13 +36,13 @@
 </header>
 
 <!-- About Me Section -->
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>I'm passionate about turning ideas into digital realities. I specialize in software development, data analytics, web development, and crafting growth-focused marketing strategies. Let's build something extraordinary together!</p>
+<section id="about" class="section fade-in">
+  <h2>About Me 📋</h2>
+  <p>I'm passionate about turning ideas into digital realities. I specialize in software development, data analytics, web development, and growth-driven marketing strategies. Let's build something extraordinary together!</p>
 </section>
-<!-- Skills Section (Honeycomb) -->
-<section id="skills" class="section">
-  <h2>Skills</h2>
+<!-- Skills Section -->
+<section id="skills" class="section fade-in">
+  <h2>Skills 🛠️</h2>
   <div class="honeycomb">
     <div class="hex">
       <img src="webdev-icon.png" alt="Web Development" class="skill-icon">
@@ -59,8 +72,8 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="section">
-  <h2>Services</h2>
+<section id="services" class="section fade-in">
+  <h2>Services 🚀</h2>
   <div class="services-grid">
     <div class="service-card">Web Development</div>
     <div class="service-card">Digital Marketing Strategies</div>
@@ -69,8 +82,8 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
+<section id="projects" class="section fade-in">
+  <h2>Projects 📈</h2>
   <div class="projects-grid">
     <a href="project1.html" class="project-card">LetsGetNourished Website</a>
     <a href="project2.html" class="project-card">247Logistics Platform</a>
@@ -78,80 +91,83 @@
     <a href="project4.html" class="project-card">iOS 2D Strategy Game</a>
     <a href="project5.html" class="project-card">Money Management Software</a>
     <a href="project6.html" class="project-card">Marketech Digital Agency</a>
+    <a href="project7.html" class="project-card">Housing Market Data Analysis</a>
+    <a href="project8.html" class="project-card">Customer Churn Prediction</a>
   </div>
 </section>
 <!-- Certifications Section -->
-<section id="certifications" class="section">
-  <h2>Certifications</h2>
+<section id="certifications" class="section fade-in">
+  <h2>Certifications 🏆</h2>
   <div class="cert-slider" id="cert-slider">
     <div class="cert-card">
-      <img src="ibm-logo.png" alt="IBM Logo">
+      <img src="ibm-logo.png" alt="IBM Certification">
       <p>IBM Data Science Professional Certificate</p>
     </div>
     <div class="cert-card">
-      <img src="google-logo.png" alt="Google Logo">
+      <img src="google-logo.png" alt="Google Certification">
       <p>Google Data Analytics Certificate</p>
     </div>
     <div class="cert-card">
-      <img src="meta-logo.png" alt="Meta Logo">
+      <img src="meta-logo.png" alt="Meta Certification">
       <p>Meta Front-End Developer Certificate</p>
     </div>
     <div class="cert-card">
-      <img src="microsoft-logo.png" alt="Microsoft Logo">
-      <p>Microsoft Azure AI Fundamentals Certificate</p>
+      <img src="microsoft-logo.png" alt="Microsoft Certification">
+      <p>Microsoft Azure AI Fundamentals</p>
     </div>
   </div>
 </section>
 
-<!-- Experience Timeline -->
-<section id="experience" class="section">
-  <h2>Experience</h2>
+<!-- Experience Timeline Section -->
+<section id="experience" class="section fade-in">
+  <h2>Experience Timeline 📜</h2>
   <div class="timeline">
-    <div class="timeline-item">
-      <span>May 2024 – Present</span>
-      <h3>Walmart — Department Manager (Online Shopping)</h3>
+    <div class="timeline-item left">
+      <h3>Walmart — Department Manager</h3>
+      <p>May 2024 – Present</p>
     </div>
-    <div class="timeline-item">
-      <span>Sept 2023 – Apr 2024</span>
-      <h3>Rogers — Customer Service Tech Rep</h3>
+    <div class="timeline-item right">
+      <h3>Rogers — Tech Support Specialist</h3>
+      <p>Sept 2023 – Apr 2024</p>
     </div>
-    <div class="timeline-item">
-      <span>Jul 2022 – Aug 2023</span>
-      <h3>Erum IT — Business Analyst/IT Consultant</h3>
+    <div class="timeline-item left">
+      <h3>Erum IT — Business Analyst</h3>
+      <p>Jul 2022 – Aug 2023</p>
     </div>
-    <div class="timeline-item">
-      <span>Aug 2021 – May 2022</span>
-      <h3>Global West Development — QA Engineer</h3>
+    <div class="timeline-item right">
+      <h3>Global West — QA Engineer</h3>
+      <p>Aug 2021 – May 2022</p>
     </div>
-    <div class="timeline-item">
-      <span>Jan 2020 – May 2021</span>
+    <div class="timeline-item left">
       <h3>Jaffer Business Systems — Junior SQL Developer</h3>
+      <p>Jan 2020 – May 2021</p>
     </div>
-    <div class="timeline-item">
-      <span>Sept 2016 – Jun 2019</span>
-      <h3>BSc Computer Science — University of Hertfordshire</h3>
+    <div class="timeline-item right">
+      <h3>University of Hertfordshire — BSc Computer Science</h3>
+      <p>Sept 2016 – Jun 2019</p>
     </div>
   </div>
 </section>
+
 <!-- Testimonials Section -->
-<section id="testimonials" class="section">
-  <h2>Testimonials</h2>
+<section id="testimonials" class="section fade-in">
+  <h2>Testimonials 📢</h2>
   <div class="testimonial-slider" id="testimonial-slider">
     <div class="testimonial-card">
-      <p>"Basit delivered outstanding results on our web project. Highly recommend!"</p>
+      <p>"Basit delivered exceptional quality — highly recommend him!"</p>
     </div>
     <div class="testimonial-card">
-      <p>"Professional, talented, and reliable — exactly what we needed."</p>
+      <p>"A true professional with technical brilliance and work ethic."</p>
     </div>
     <div class="testimonial-card">
-      <p>"Basit’s work ethic and technical skills are unmatched."</p>
+      <p>"Basit's innovative solutions helped our business grow rapidly."</p>
     </div>
   </div>
 </section>
 
 <!-- Contact Me Section -->
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
+<section id="contact" class="section fade-in">
+  <h2>Contact Me ✉️</h2>
   <form class="contact-form">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
@@ -174,14 +190,14 @@
     </a>
   </div>
 </section>
+
 <!-- Footer -->
 <footer class="footer">
   <p>&copy; 2025 Basit Raza Abbasi. All rights reserved.</p>
 </footer>
 
-<!-- Scripts -->
+<!-- Typing Animation Script -->
 <script>
-// Typing Animation
 const textArray = ["Software Developer.", "Data Analyst.", "Web Developer.", "Digital Marketer."];
 let typingElement = document.getElementById('typing');
 let arrayIndex = 0;
@@ -209,6 +225,35 @@ function eraseText() {
 }
 
 document.addEventListener('DOMContentLoaded', typeText);
+
+// Dark Mode Toggle
+const darkToggle = document.getElementById('darkModeToggle');
+darkToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
+// Smooth Scroll Animations
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -100px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add('appear');
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 </script>
 
 </body>
