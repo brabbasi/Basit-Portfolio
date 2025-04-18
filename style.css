@@ -1,0 +1,296 @@
+/* ======== RESET & GLOBAL ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #eee;
+  transition: background 0.5s, color 0.5s;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* ======== HERO SECTION ======== */
+.hero {
+  text-align: center;
+  padding: 100px 20px 50px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px #00c2ff;
+  animation: float 6s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.typing {
+  font-size: 1.5rem;
+  color: #00c2ff;
+  height: 2rem;
+}
+
+.hero-buttons .btn {
+  margin: 10px;
+}
+
+/* ======== BUTTONS ======== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 5px;
+  background: #00c2ff;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0077b6;
+  color: #fff;
+  transform: scale(1.05);
+}
+/* ======== SKILLS HONEYCOMB ======== */
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hex {
+  width: 120px;
+  height: 104px;
+  background: #00c2ff;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+.hex:hover {
+  background: #0077b6;
+  color: white;
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+/* ======== SERVICES ======== */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background: #1a1a1a;
+  padding: 40px 20px;
+  border-radius: 20px;
+  width: 250px;
+  box-shadow: 0px 0px 15px rgba(0, 194, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: #00c2ff;
+  color: black;
+}
+
+/* ======== PROJECTS ======== */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background: #1f1f1f;
+  padding: 40px 20px;
+  border-radius: 20px;
+  width: 250px;
+  color: #00c2ff;
+  text-decoration: none;
+  box-shadow: 0px 0px 15px rgba(0, 194, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background: #00c2ff;
+  color: #111;
+  transform: translateY(-10px);
+}
+
+/* ======== CERTIFICATIONS ======== */
+.cert-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.cert-card {
+  min-width: 250px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 20px;
+  flex: none;
+  scroll-snap-align: center;
+  transition: 0.3s;
+}
+
+.cert-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* ======== EXPERIENCE TIMELINE ======== */
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #00c2ff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 20px;
+  background: #1f1f1f;
+  position: relative;
+  width: 50%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 194, 255, 0.3);
+  transition: 0.3s;
+}
+
+.timeline-item:hover {
+  background: #00c2ff;
+  color: #111;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+/* ======== TESTIMONIALS ======== */
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-card {
+  min-width: 300px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 20px;
+  flex: none;
+  scroll-snap-align: center;
+  transition: 0.3s;
+}
+
+.testimonial-card:hover {
+  background: #00c2ff;
+  color: #111;
+}
+
+/* ======== CONTACT FORM ======== */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.contact-form button {
+  background: #00c2ff;
+  color: #111;
+  border: none;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0077b6;
+  color: white;
+}
+
+/* ======== SOCIAL LINKS ======== */
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* ======== FOOTER ======== */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
