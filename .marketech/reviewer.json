@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project_id": "portfolio",
+  "reviewer": "marketech-ai-reviewer",
+  "risk_tier": 2,
+  "coverage": ["pull_requests","code","project_claims","resume_claims","contact_flows","deployments","accessibility"],
+  "blocking_before_release": true,
+  "producer_self_approval_allowed": false,
+  "special_invariants": ["No fabricated employment, project, metric or skill claims.","Public-facing claims must remain evidence-backed."],
+  "baseline_review_status": "IN_PROGRESS"
+}
