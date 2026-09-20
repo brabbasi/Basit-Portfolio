@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "project_id": "basit-portfolio",
+  "project_name": "Basit Portfolio",
+  "risk_tier": 2,
+  "reviewer": "marketech-independent-reviewer",
+  "execution_mode": "central_marketech_reviewer",
+  "local_github_action": false,
+  "coverage": [
+    "content_claims",
+    "employment_education",
+    "projects",
+    "certifications_testimonials",
+    "external_links",
+    "analytics",
+    "accessibility",
+    "deployment",
+    "production_readiness"
+  ],
+  "fail_closed": true,
+  "baseline_review": ".marketech/BASELINE_REVIEW.md",
+  "authority": {
+    "producer_self_approval": false,
+    "review_verdict_is_production_authority": false
+  }
+}
