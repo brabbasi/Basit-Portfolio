@@ -334,3 +334,74 @@ h1, h2 {
   transform: translateY(0);
 }
 
+
+
+/* ======== PORTFOLIO TRUTH / ACCESSIBILITY HARDENING ======== */
+.contact-note {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #c8c8c8;
+  line-height: 1.7;
+}
+
+.social-links {
+  flex-wrap: wrap;
+}
+
+.btn:focus-visible,
+.project-card:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 56px 16px;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .timeline::after {
+    display: none;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    width: 100%;
+  }
+
+  .social-links {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .social-links .btn {
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html, body {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}
