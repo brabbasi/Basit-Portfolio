@@ -1,0 +1,49 @@
+name: Portfolio LeadAhead Truthful Listing
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'leadahead.html'
+      - 'README.md'
+      - '.github/workflows/portfolio-leadahead-ci.yml'
+permissions:
+  contents: read
+jobs:
+  offline-source-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # reviewed v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Check exact source revision
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+      - name: Validate portfolio links and truthful privacy claims
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag=="a":
+                      self.hrefs.extend(v for k,v in attrs if k=="href")
+          home=Path("index.html").read_text(encoding="utf-8")
+          detail=Path("leadahead.html").read_text(encoding="utf-8")
+          css=Path("style.css").read_text(encoding="utf-8")
+          assert ".fade-in {\n  opacity: 1;\n  transform: none;" in css, "sections hidden without IntersectionObserver"
+          parser=Links()
+          parser.feed(home)
+          assert parser.hrefs.count("leadahead.html")==1, "missing or duplicate project card"
+          parser=Links()
+          parser.feed(detail)
+          assert "index.html#projects" in parser.hrefs
+          for required in ("LeadAhead", "not a deployed product", "independent concept", "fictional or expressly authorized"):
+              assert required.lower() in detail.lower(), required
+          assert "submit" not in detail.lower() or "not" in detail.lower()
+          print("LEADAHEAD_PORTFOLIO_SOURCE_AND_LINKS=PASS")
+          print("PRODUCTION_PUBLICATION=NOT_AUTHORIZED")
+          PY
