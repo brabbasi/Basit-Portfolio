@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'style.css'
       - 'leadahead.html'
       - 'README.md'
       - '.github/workflows/portfolio-leadahead-ci.yml'
@@ -32,6 +33,8 @@ jobs:
                       self.hrefs.extend(v for k,v in attrs if k=="href")
           home=Path("index.html").read_text(encoding="utf-8")
           detail=Path("leadahead.html").read_text(encoding="utf-8")
+          css=Path("style.css").read_text(encoding="utf-8")
+          assert ".fade-in {\n  opacity: 1;\n  transform: none;" in css, "sections hidden without IntersectionObserver"
           parser=Links()
           parser.feed(home)
           assert parser.hrefs.count("leadahead.html")==1, "missing or duplicate project card"
