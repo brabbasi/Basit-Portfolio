@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LeadAhead — an independent, privacy-first operations intelligence concept for shift coverage, proactive risk flags and leader handoffs.">
+  <title>LeadAhead | Operations Intelligence Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .la-page{max-width:1020px;margin:0 auto;padding:48px 24px 90px;line-height:1.7}
+    .la-back{display:inline-block;margin-bottom:24px;color:#3ceddf}
+    .la-eyebrow{letter-spacing:.16em;text-transform:uppercase;color:#3ceddf;font-size:.82rem;font-weight:700}
+    .la-hero{padding:34px;border:1px solid #32777c;border-radius:22px;background:linear-gradient(130deg,#122b31,#101b28)}
+    .la-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;margin:8px 0 20px}
+    .la-hero p{color:#e4edf3;max-width:750px}
+    .la-badge{display:inline-block;background:#11383b;border:1px solid #46bcb3;color:#b9fff6;border-radius:100px;padding:4px 12px;margin:18px 0;font-size:.85rem;font-weight:700}
+    .la-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;margin:26px 0}
+    .la-card{padding:24px;border-radius:18px;background:#12212b;border:1px solid #405466}
+    .la-card h2{font-size:1.3rem;margin-bottom:10px;color:#e9ffff}
+    .la-card p{color:#d1dce6}
+    .la-note{margin-top:30px;padding:22px;border-left:5px solid #36ccc0;background:#112934}
+    .la-page a:focus-visible{outline:3px solid #40e6d7;outline-offset:5px}
+    @media(prefers-color-scheme:light){.la-card,.la-note{color:#edf6fd}}
+  </style>
+</head>
+<body>
+  <main class="la-page">
+    <a href="index.html#projects" class="la-back">← Back to all projects</a>
+    <section class="la-hero" aria-labelledby="la-title">
+      <p class="la-eyebrow">Independent project · operations technology</p>
+      <h1 id="la-title">LeadAhead</h1>
+      <span class="la-badge">Prototype / offline engineering — not a deployed product</span>
+      <p>LeadAhead explores how shift leaders can anticipate coverage gaps, plan breaks, and hand off practical next actions instead of discovering operational problems after they occur.</p>
+      <p>Its proposed design is local-first, manager-controlled and focused on explainable recommendations rather than automated personnel decisions.</p>
+    </section>
+    <section aria-labelledby="la-capabilities">
+      <h2 id="la-capabilities" style="margin-top:40px">What the pilot is designed to do</h2>
+      <div class="la-grid">
+        <article class="la-card"><h2>Coverage & breaks</h2><p>Evaluate synthetic shift assignments against minimum role coverage and surface time-specific gaps before opening.</p></article>
+        <article class="la-card"><h2>Risk & handoffs</h2><p>Convert observed risks into a printable, explainable opening brief with human review and an audit-friendly summary.</p></article>
+        <article class="la-card"><h2>Fair decisions</h2><p>Separate availability and approved qualifications from protected accommodations; recommend coverage options without automatically ranking employees.</p></article>
+      </div>
+    </section>
+    <section class="la-note" aria-labelledby="la-trust">
+      <h2 id="la-trust">Privacy and evidence boundary</h2>
+      <p>This is an independent concept, not an official Walmart tool or a claim of access to any employer's systems. Prototype input and demonstrations must use fictional or expressly authorized data. No customer information, associate performance history, payroll, credentials or sensitive accommodation details are transferred to Marketech Digital or external AI services.</p>
+      <p>Current status: source and deterministic testing are being prepared within a separate, review-gated Marketech engineering workspace. A reliable operational pilot, external integration, deployment and real-world use have <strong>not</strong> been established.</p>
+    </section>
+    <p style="margin-top:30px"><a href="index.html#projects" class="la-back">← Return to portfolio</a></p>
+  </main>
+</body>
+</html>
