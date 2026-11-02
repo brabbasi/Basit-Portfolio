@@ -334,3 +334,11 @@ h1, h2 {
   transform: translateY(0);
 }
 
+
+/* Enhanced scrolling only; base content stays visible without JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .fade-in:not(.appear) {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
