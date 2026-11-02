@@ -35,6 +35,12 @@ jobs:
           detail=Path("leadahead.html").read_text(encoding="utf-8")
           css=Path("style.css").read_text(encoding="utf-8")
           assert ".fade-in {\n  opacity: 1;\n  transform: none;" in css, "sections hidden without IntersectionObserver"
+          assert ".reveal-ready .fade-in:not(.appear)" in css, "enhanced scroll state missing"
+          assert "@media (prefers-reduced-motion: no-preference)" in css, "reduced-motion gate missing"
+          assert "typeof window.IntersectionObserver === 'function'" in home, "observer support gate missing"
+          assert "document.documentElement.classList.add('reveal-ready')" in home, "enhancement not enabled"
+          assert "document.documentElement.classList.remove('reveal-ready')" in home, "fallback not restored"
+          assert "fader => observer.observe(fader)" in home, "sections not observed"
           parser=Links()
           parser.feed(home)
           assert parser.hrefs.count("leadahead.html")==1, "missing or duplicate project card"
