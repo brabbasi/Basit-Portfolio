@@ -54,6 +54,7 @@ jobs:
           assert "Coverage gap: one position." in detail, "coverage arithmetic/example lost"
           assert "This example is static explanatory content" in detail, "demo wrongly claims real functionality"
           assert "a separate DRAFT engineering branch" in detail, "unproven deployment/readiness claim"
+          assert "does not establish human acceptance, an operational pilot, employer integration, deployment or real-world use." in detail, "missing no-human-acceptance/no-deployment disclaimer"
           print("LEADAHEAD_PORTFOLIO_SOURCE_AND_LINKS=PASS")
           print("PRODUCTION_PUBLICATION=NOT_AUTHORIZED")
           PY
