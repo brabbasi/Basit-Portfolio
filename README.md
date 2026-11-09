@@ -15,6 +15,7 @@ Welcome to the official professional portfolio of **Basit Raza Abbasi**.
 - iOS 2D Strategy Game
 - Money Management Software
 - Marketech Digital Agency
+- LeadAhead — independent operations-intelligence prototype (offline/synthetic development; not employer-integrated or shipped)
 
 ✨ **Technologies Used:**
 - HTML5, CSS3, JavaScript

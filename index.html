@@ -91,6 +91,7 @@
     <a href="project4.html" class="project-card">iOS 2D Strategy Game</a>
     <a href="project5.html" class="project-card">Money Management Software</a>
     <a href="project6.html" class="project-card">Marketech Digital Agency</a>
+    <a href="leadahead.html" class="project-card">LeadAhead — Operations Intelligence (Prototype)</a>
     <a href="project7.html" class="project-card">Housing Market Data Analysis</a>
     <a href="project8.html" class="project-card">Customer Churn Prediction</a>
   </div>
@@ -232,28 +233,29 @@ darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
-// Smooth Scroll Animations
+// Scroll reveal is optional: without JavaScript, observer support, or with
+// reduced motion, sections remain fully visible.
 const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-  threshold: 0,
-  rootMargin: "0px 0px -100px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      entry.target.classList.add('appear');
-      appearOnScroll.unobserve(entry.target);
-    }
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+const canReveal = typeof window.IntersectionObserver === 'function' &&
+  !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+if (canReveal && faders.length) {
+  let observer;
+  try {
+    observer = new window.IntersectionObserver((entries, activeObserver) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          activeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -100px 0px' });
+    faders.forEach(fader => observer.observe(fader));
+    document.documentElement.classList.add('reveal-ready');
+  } catch {
+    observer?.disconnect();
+    document.documentElement.classList.remove('reveal-ready');
+  }
+}
 </script>
 
 </body>
