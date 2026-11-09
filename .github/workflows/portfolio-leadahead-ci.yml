@@ -50,6 +50,10 @@ jobs:
           for required in ("LeadAhead", "not a deployed product", "independent concept", "fictional or expressly authorized"):
               assert required.lower() in detail.lower(), required
           assert "submit" not in detail.lower() or "not" in detail.lower()
+          assert "Fictional opening handoff" in detail, "missing distinct fictional demonstration"
+          assert "Coverage gap: one position." in detail, "coverage arithmetic/example lost"
+          assert "This example is static explanatory content" in detail, "demo wrongly claims real functionality"
+          assert "a separate DRAFT engineering branch" in detail, "unproven deployment/readiness claim"
           print("LEADAHEAD_PORTFOLIO_SOURCE_AND_LINKS=PASS")
           print("PRODUCTION_PUBLICATION=NOT_AUTHORIZED")
           PY
