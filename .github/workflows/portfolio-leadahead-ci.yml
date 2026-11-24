@@ -79,6 +79,18 @@ jobs:
           assert "This example is static explanatory content" in detail, "demo wrongly claims real functionality"
           assert "a separate DRAFT engineering branch" in detail, "unproven deployment/readiness claim"
           assert "does not establish human acceptance, an operational pilot, employer integration, deployment or real-world use." in detail, "missing no-human-acceptance/no-deployment disclaimer"
+          class HeadingParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.headings = []
+              def handle_starttag(self, tag, attrs):
+                  if tag in ("h1", "h2", "h3"):
+                      self.headings.append(tag)
+          headings = HeadingParser()
+          headings.feed(detail)
+          assert headings.headings == ["h1", "h2", "h3", "h3", "h3", "h2", "h2"], "incorrect detail heading hierarchy"
+          assert "minmax(min(100%,235px),1fr)" in detail, "card grid must permit narrow widths"
+          print("LEADAHEAD_HEADING_AND_REFLOW_SOURCE_CHECKS=PASS")
           print("LEADAHEAD_PORTFOLIO_SOURCE_AND_LINKS=PASS")
           print("PRODUCTION_PUBLICATION=NOT_AUTHORIZED")
           PY
